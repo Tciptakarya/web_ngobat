@@ -12,8 +12,9 @@ Berlaku kapan pun, di sesi mana pun, dengan tool apa pun.
 harga, galeri, Instagram feed, lokasi outlet, kontak. Kanal konversi: WhatsApp.
 
 **Ini project HTML statis, bukan aplikasi.** Nol backend, API, database,
-autentikasi, payment, dan build tooling. Tujuh file `code.html` yang
-self-contained, Tailwind CSS via CDN, vanilla JS inline.
+autentikasi, payment, dan build tooling. Halaman produksi adalah `index.html`
+di root (self-contained, Tailwind CSS via CDN, vanilla JS inline), ditambah
+enam halaman draft di `stitch_custom_design_implementation/`.
 
 Jangan mengarang arsitektur yang tidak ada. Kalau tidak ada di source code, berarti
 tidak ada.
@@ -129,8 +130,8 @@ kebenaran untuk katalog.
   `logo-lockup.png` (footer), plus `logo-wordmark.png`, `logo-horizontal.png`, dan
   favicon 64/128/256. Kalau butuh varian baru, turunkan dari `ngobat_logo.png`,
   jangan gambar ulang.
-- `assets/` ada **di dalam folder halaman**, bukan di root project. Path-nya relatif
-  (`assets/...`). Kalau folder itu dipindah keluar, semua gambar rusak.
+- `assets/` ada **di root project**, di sebelah `index.html`. Path-nya relatif
+  (`assets/...`), jadi keduanya harus selalu berpindah bersama.
 - Warna token tetap `#FFE600` meski logo punya `#FEE820` — sudah diputuskan
   sementara. Jangan diubah tanpa konfirmasi client. Lihat `DECISIONS.md`.
 
@@ -277,7 +278,7 @@ Temuan yang akan membuat agent berikutnya salah kalau tidak tahu:
    `assets/brand/`. Jangan kembalikan ke placeholder emoji. Varian yang belum dipakai:
    `logo-horizontal.png`, `logo-wordmark.png`, `favicon-256.png`
 6. **Gambar sudah lokal, tidak ada hotlink lagi di halaman canonical.** 27 `<img>`
-   semuanya menunjuk ke folder `assets/` di dalam folder halaman. Enam halaman draft
+   semuanya menunjuk ke folder `assets/` di root project. Enam halaman draft
    masih hotlink — jangan tirukan pola itu ke halaman canonical.
 7. **2 `screen.png` adalah stub 28 byte.** Bukan gambar valid. Jangan buka atau
    analisis sebagai gambar.

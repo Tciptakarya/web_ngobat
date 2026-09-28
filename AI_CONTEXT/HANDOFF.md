@@ -88,7 +88,7 @@ Detail di `DECISIONS.md`. Yang wajib diketahui:
 
 **1. Halaman canonical adalah sumber kebenaran.**
 ```
-stitch_custom_design_implementation/ngopi_bareng_teman_official_website_consolidated_refined/code.html
+index.html   (root repository)
 ```
 Enam halaman draft **tidak boleh dipakai sebagai referensi data** — hanya fitur.
 Alasannya: canonical cocok 11/11 dengan papan harga resmi; `beranda` memuat 4 produk
@@ -114,8 +114,8 @@ build step pada tahap ini.
 - **Jangan kembalikan logo ke placeholder emoji** - `assets/brand/` sudah jadi
   sumbernya. Kalau butuh varian baru, turunkan dari `ngobat_logo.png`, jangan
   gambar ulang.
-- **Jangan pindahkan `assets/` keluar dari folder halaman.** Path-nya relatif
-  (`assets/...`); kalau dipindah, semua gambar rusak.
+- **`index.html` dan `assets/` ada di root dan harus berpindah bersama.**
+  Path aset relatif (`assets/...`). Kalau dipisah, semua gambar rusak.
 - **Jangan tambah dependency atau tooling tanpa alasan.**
 - **Jangan reorganisasi struktur folder** tanpa instruksi eksplisit.
 - **Jangan ubah warna `#FFE600`** tanpa konfirmasi client - sudah diputuskan

@@ -65,7 +65,7 @@ Tujuh file independen. Hanya satu yang berlabel "official website".
 
 | File | Baris | Peran |
 |---|---|---|
-| `ngopi_bareng_teman_official_website_consolidated_refined/code.html` | 1259 | **Canonical.** Satu halaman berisi 6 section + footer |
+| `index.html` (root) | ~1290 | **Canonical + produksi.** 6 section, 2 modal, 3 filter |
 | `ngopi_bareng_teman_beranda_profil_perusahaan/code.html` | 548 | Draft awal. Body 100% identik dengan `global_navigation_footer_system` |
 | `ngopi_bareng_teman_global_navigation_footer_system/code.html` | 548 | Eksperimen nav. Body identik dengan file di atasnya; header sticky + drawer |
 | `ngopi_bareng_teman_menu_harga/code.html` | 516 | Draft fokus menu. Punya sticky filter + section susu alternatif |
@@ -248,11 +248,23 @@ maupun notification.
 
 ```
 E:\Ngobat\
+├── index.html                              <- HALAMAN PRODUKSI (dipasang Vercel)
+├── assets\                                 <- Path-nya relatif dari index.html
+│   ├── brand\                              <- 8 file, turunan ngobat_logo.png
+│   │   ├── logo-mark.png
+│   │   ├── logo-lockup.png
+│   │   ├── logo-wordmark.png
+│   │   ├── logo-horizontal.png
+│   │   └── favicon-64/128/256/512.png
+│   ├── products\                           <- 11 foto produk, 600x600 JPEG
+│   ├── gallery\                            <- 6 tile galeri, 1200x800
+│   └── hero\                               <- hero, wide band, OG image
+│
 ├── .gitignore
 ├── AGENTS.md
 ├── design_specification.md                 <- duplikat byte-identik (lihat catatan)
 │
-├── ngobat_logo.png                        <- logo resmi, BELUM dipakai
+├── ngobat_logo.png                        <- logo resmi sumber, sudah diturunkan
 ├── menu-ngobat.jpeg                       <- papan harga resmi, source of truth
 ├── stitch_custom_design_implementation_and_PRD.zip   <- arsip impor, tidak diedit
 │
@@ -279,8 +291,7 @@ E:\Ngobat\
     │   └── DESIGN.md                      <- design token YAML (60+ token)
     │
     ├── ngopi_bareng_teman_official_website_consolidated_refined\
-    │   ├── code.html                      <- CANONICAL, 1259 baris
-    │   └── screen.png
+    │   └── screen.png                     <- render desain; halaman-nya sudah pindah ke root
     │
     ├── ngopi_bareng_teman_beranda_profil_perusahaan\
     │   ├── code.html
@@ -320,7 +331,7 @@ art direction**, bukan deliverable. Belum dipakai di halaman mana pun.
 
 | File | Purpose | Dependency / Relationship | Important? |
 |---|---|---|---|
-| `stitch_custom_design_implementation/ngopi_bareng_teman_official_website_consolidated_refined/code.html` | Halaman utama canonical. 6 section, 5 fungsi JS, 11 produk, 6 foto galeri, mobile drawer, 2 modal, SEO JSON-LD | Sumber kebenaran untuk konten & data. Berisi semua data yang dirujuk halaman lain | **Ya — sentral** |
+| `index.html` (root) | Halaman produksi canonical. 6 section, 5 fungsi JS, 11 produk, 6 foto galeri, mobile drawer, 2 modal, SEO JSON-LD | Sumber kebenaran untuk konten & data. Berisi semua data yang dirujuk halaman lain | **Ya — sentral** |
 | `menu-ngobat.jpeg` | Papan harga cetak resmi. 11 produk, harga, komposisi, Packaging shot | Sumber kebenaran terverifikasi untuk data katalog. Cross-check 11/11 cocok dengan halaman canonical | **Ya — otoritatif** |
 | `ngobat_logo.png` | Logo resmi brand. 1227x1282 px, RGB tanpa alpha, bg putih | Belum dipakai. Harus menggantikan 3 kemunculan emoji di halaman canonical | **Ya — belum terpasang** |
 | `stitch_custom_design_implementation/warm_social_cafe/DESIGN.md` | 60+ design token (warna, tipografi, radius, spacing) dalam YAML frontmatter | Sumber token yang di-copy ke `tailwind.config` tiap halaman | Ya |

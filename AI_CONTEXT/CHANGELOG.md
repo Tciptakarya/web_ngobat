@@ -5,6 +5,62 @@ Format: `## [Tanggal]` → `Added` / `Changed` / `Fixed` / `Removed` / `Technica
 
 ---
 
+## 2026-09-28 (4) — Halaman utama dipindahkan ke root agar bisa di-deploy
+
+### Fixed
+
+- **Vercel menyajikan `404 NOT_FOUND` di `web-ngobat.vercel.app`.** Deployment-nya
+  sendiri sukses (status `Ready`), dan halamannya bisa diakses di URL dalam
+  `stitch_custom_design_implementation/ngopi_bareng_teman_official_website_consolidated_refined/code.html`
+  (HTTP 200, 85.567 byte). Penyebabnya: tidak ada `index.html` di root repository.
+  Vercel menyajikan `/` dengan cara mencari `index.html` di root, dan tidak
+  menemukannya — jadi file-nya ter-deploy, tapi tidak ada yang jadi halaman depan.
+
+### Changed
+
+- **Halaman produksi pindah ke root repository.**
+  `stitch_custom_design_implementation/ngopi_bareng_teman_official_website_consolidated_refined/code.html`
+  → `index.html`
+- **Folder `assets/` pindah ke root**, di sebelah `index.html`. Dipakai `git mv`
+  supaya git mencatatnya sebagai rename, bukan hapus + tambah.
+- Path di dalam `index.html` **tidak berubah** — tetap `assets/...` dan tetap
+  relatif. Karena `index.html` dan `assets/` kini berdua di root, path relatif ini
+  masih resolve tanpa menyentuh satu baris pun di dalam HTML.
+- Struktur direktori didokumentasikan ulang di `ARCHITECTURE.md`; referensi path
+  di `AGENTS.md`, `CURRENT_STATE.md`, `DECISIONS.md`, `HANDOFF.md`, dan `TODO.md`
+  semuanya diperbarui.
+
+Folder `stitch_custom_design_implementation/ngopi_bareng_teman_official_website_consolidated_refined/`
+tidak dihapus — `screen.png` (render desain dari Stitch) masih di sana dan berguna
+sebagai referensi tampilan. Yang pindah hanya `code.html` dan `assets/`.
+
+Entri changelog sebelumnya **sengaja tidak ditulis ulang**. Isinya tetap menggambarkan
+kondisi pada saat itu, ketika halamannya memang masih berada di dalam foldernya.
+
+### Technical Notes
+
+**Kenapa bukan `vercel.json` rewrite.** URL aset di dalam HTML bersifat relatif, dan
+browser me-resolve-nya terhadap URL dokumen, bukan terhadap path file aslinya di
+server. Kalau `/` di-rewrite ke file yang berada di dalam folder, `assets/brand/logo-mark.png`
+tetap diminta dari `/assets/brand/logo-mark.png` dan 404. Menghindarinya berarti
+memindahkan `assets/` juga — hasilnya identik dengan memindahkan `index.html`, tapi
+dengan path yang jauh lebih panjang dan rapuh kalau foldernya someday di-rename.
+
+**Kenapa bukan redirect.** Butuh satu hop tambahan, dan yang dibuka tamu adalah
+halaman kedua, bukan yang pertama.
+
+**Yang masih ikut ter-deploy.** `stitch_custom_design_implementation_and_PRD.zip`
+(10 MB), 5 foto moodboard (7,4 MB), 7 `screen.png`, dan 6 halaman draft — semuanya
+naik ke Vercel karena belum ada `.vercelignore`. Tidaknya situs di root, jadi
+`_headers`/path lama tidak lagi relevan, tapi file beratnya masih. Belum diperbaiki
+karena di luar scope task ini — tercatat di `TODO.md`.
+
+### Removed
+
+Tidak ada. Tidak ada file yang dihapus; `git mv` menghasilkan riwayat rename.
+
+---
+
 ## 2026-09-28 (3) — Backport 3 fitur + publish ke GitHub
 
 ### Added

@@ -80,7 +80,8 @@ lightbox memakai foto moodboard resolusi tinggi, bukan foto produk.
 #### Symptoms
 
 Enam dari tujuh halaman berisi data yang tidak cocok dengan papan harga resmi
-(`menu-ngobat.jpeg`). `official_website_consolidated_refined` cocok **11 dari 11**.
+(`menu-ngobat.jpeg`). `index.html` (dulu `official_website_consolidated_refined`)
+cocok **11 dari 11**.
 
 #### Suspected Cause
 
@@ -316,7 +317,7 @@ Lima dari tujuh halaman tidak punya tombol hamburger maupun drawer mobile:
 
 | Halaman | Mobile drawer? |
 |---|---|
-| `official_website_consolidated_refined` | Ya |
+| `index.html` (root) | Ya |
 | `global_navigation_footer_system` | Ya |
 | `menu_harga` | **Tidak** |
 | `galeri_instagram` | **Tidak** |

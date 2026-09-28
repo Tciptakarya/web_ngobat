@@ -119,8 +119,8 @@ Yang tersisa:
 - [x] **Logo terpasang** di header, mobile drawer, footer (3 titik)
 - [x] **27 `<img>` diganti aset lokal, 0 hotlink tersisa** di halaman canonical
 - [x] Favicon ditambahkan, 2 `alt` yang tidak cocok diperbaiki
-- [x] **Aset dipindahkan ke dalam folder halaman** supaya path relatif resolve dan
-      halaman bisa di-deploy mandiri
+- [x] **Aset + halaman utama dipindahkan ke root** supaya Vercel menyajikan
+      `index.html` di `/` (sebelumnya tidak ada index.html di root, hasilnya 404)
 - [x] **Verifikasi browser**: filter 3/8/11, filter galeri 2/6, modal produk,
       lightbox, mobile drawer, scroll lock, 0 console error, 27 gambar / 0 hotlink /
       0 tanpa alt

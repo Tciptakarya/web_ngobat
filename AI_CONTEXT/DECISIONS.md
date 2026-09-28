@@ -19,7 +19,8 @@ Status entri:
 
 ### Decision
 
-`stitch_custom_design_implementation/ngopi_bareng_teman_official_website_consolidated_refined/code.html`
+`index.html` di root repository (sebelum 2026-09-28 berada di
+`stitch_custom_design_implementation/ngopi_bareng_teman_official_website_consolidated_refined/code.html`)
 adalah satu-satunya halaman yang dipakai sebagai referensi data dan konten. Enam
 halaman draft lain **tidak boleh dipakai sebagai referensi data** — hanya sebagai
 referensi fitur dan ide desain.
