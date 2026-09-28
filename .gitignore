@@ -1,0 +1,17 @@
+# Graphify knowledge-graph output (regenerate with /graphify)
+graphify-out/
+.graphify/
+
+# OS / editor noise
+Thumbs.db
+.DS_Store
+desktop.ini
+.vscode/
+.idea/
+
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+*.pem
+*.key
