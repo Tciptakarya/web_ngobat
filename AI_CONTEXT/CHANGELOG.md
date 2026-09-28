@@ -5,6 +5,59 @@ Format: `## [Tanggal]` → `Added` / `Changed` / `Fixed` / `Removed` / `Technica
 
 ---
 
+## 2026-09-28 (5) — `.vercelignore`: potong payload deploy 24,3 MB jadi 2,6 MB
+
+### Added
+
+- **`.vercelignore` di root repository.** Vercel sekarang hanya menerima
+  `index.html`, `assets/`, dan `README.md`.
+
+| | Sebelum | Sesudah |
+|---|---|---|
+| File terkirim | 61 | 30 |
+| Ukuran terkirim | 24,3 MB | **2,6 MB** (10,9%) |
+| Beban deploy | 10,4 MB draft + 10,1 MB ZIP + sisanya | hanya situs produksi |
+
+### Removed
+
+Tidak ada file yang dihapus dari repo. `.vercelignore` hanya memengaruhi
+pengiriman ke Vercel - GitHub tetap menyimpan semuanya.
+
+### Technical Notes
+
+**Yang disembunyikan, dan alasannya:**
+
+| Disesembunyikan | Ukuran | Alasan |
+|---|---|---|
+| `stitch_custom_design_implementation/` | 10,4 MB | 6 halaman draft dengan harga fiktif, 4 produk yang tidak ada di katalog, nomor WA placeholder `6281234567890`, alamat dan jam buka yang berbeda. Kalau publik, pengunjung bisa menemukan harga yang salah dan telepon yang tidak aktif |
+| `stitch_..._and_PRD.zip` | 10,1 MB | Arsip impor Stitch, isinya sudah ada sebagai file biasa di repo |
+| `AGENTS.md` + `AI_CONTEXT/` | 0,1 MB | Dokumentasi handoff internal: daftar kontradiksi data, blocker, keputusan. Tidak bernilai bagi pengunjung |
+| `ngobat_logo.png` | 0,9 MB | Sumber aset. Turunannya sudah ada di `assets/brand/` |
+| `menu-ngobat.jpeg` | 0,1 MB | Papan harga sumber. Turunannya sudah ada di `assets/products/` |
+| `design_specification.md` | 5 KB | Duplikat byte-identik dari yang ada di dalam folder Stitch |
+
+**Verifikasi sebelum commit.** `.vercelignore` disimulasikan dengan evaluator
+gitignore-style terhadap seluruh isi repo:
+
+- 23 path aset yang dirujuk `index.html` (22 di `src`/`data-image`/`data-src`/
+  `href`, ditambah 1 untuk OG image di `<meta>`) - **0 ikut ter-exclude**
+- `index.html` ada di daftar terkirim
+- Seluruh 28 file di `assets/` ada di daftar terkirim
+- Tidak ada satu pun file yang tidak sengaja tertinggal
+
+**Aset tak terpakai, ditemukan saat menulis `.vercelignore` ini.** 5 file di `assets/`
+tidak dirujuk oleh `index.html` (~885 KB): `logo-horizontal.png`,
+`logo-wordmark.png`, `favicon-256.png`, `favicon-512.png`, dan
+`hero/interior-wide.jpg`. Semuanya sengaja dibuat sebagai varian cadangan, dan
+`favicon-512.png` (235 KB) pada dasarnya cuma duplikat `logo-mark.png` di
+resolusi 256. Tidak dihapus karena berguna untuk penambahan berikutnya - tercatat
+di `TODO.md`.
+
+Entri changelog sebelumnya **sengaja tidak ditulis ulang** - tetap menggambarkan
+kondisi pada saat itu.
+
+---
+
 ## 2026-09-28 (4) — Halaman utama dipindahkan ke root agar bisa di-deploy
 
 ### Fixed

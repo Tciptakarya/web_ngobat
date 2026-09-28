@@ -137,6 +137,22 @@ kebenaran untuk katalog.
 
 ---
 
+## Deployment Rules
+
+Situs produksi adalah `index.html` di root, di-deploy ke Vercel secara otomatis
+setiap kali ada push ke `main`.
+
+- **Jangan memindahkan `index.html`.** Vercel menyajikan `/` dengan mencari
+  `index.html` di root. Kalau tidak ada, hasilnya 404 walaupun file-nya
+  sudah ter-deploy dengan status `Ready`.
+- **Jangan menambah file baru tanpa menambahkannya ke `.vercelignore`.** Repo berisi
+  6 halaman draft dengan harga fiktif dan nomor WhatsApp placeholder, plus arsip
+  ZIP 10 MB. Semuanya jadi publik kalau tidak dikecualikan.
+- **Ingat arah efek `.vercelignore`.** Setiap baris di dalamnya berarti "jangan
+  kirim ke Vercel". Menghapus baris berarti membuat file itu terekspos publik.
+- **Aset baru harus masuk `assets/`.** Aset yang dipakai `index.html` disimpan
+  di sana supaya ikut ter-deploy tanpa perlu disentuh `.vercelignore`.
+
 ## Security Rules
 
 **Jangan pernah menuliskan** dalam kode maupun dokumentasi:

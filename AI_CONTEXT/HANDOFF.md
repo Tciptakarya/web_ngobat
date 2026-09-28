@@ -38,17 +38,17 @@ sudah diverifikasi render di browser.
 
 ## LAST COMPLETED
 
-**Backport 3 fitur + push ke GitHub (2026-09-28).**
+**Deploy diperbaiki + payload dipangkas (2026-09-28).**
 
-- Lightbox: prev/next, counter `n / total`, badge, deskripsi, keyboard arrows.
-  Counter mengikuti filter galeri yang aktif.
-- Filter region outlet: 4 pill, `data-region` pada 3 kartu.
-- Kanal kontak ketiga (Kunjungi Langsung) dari data outlet terverifikasi.
-- Filter bar menu jadi `sticky top-20`.
-- `data-desc` di 6 kartu galeri; tile ke-6 di-retitle.
-- Push ke `github.com/Tciptakarya/web_ngobat` branch `main`.
+- Halaman produksi dipindah ke root: `index.html` + `assets/`. Sebelumnya Vercel
+  menyajikan 404 karena tidak ada `index.html` di root.
+- `.vercelignore` dibuat: 24,3 MB -> 2,6 MB. 6 halaman draft, arsip ZIP, aset
+  brand sumber, dan dokumentasi AI tidak lagi terkirim ke Vercel.
+- Live di `https://web-ngobat.vercel.app/` (HTTP 200, title benar).
+- `PROJECT_CONTEXT.md` bagian Deployment diisi; `AGENTS.md` dapat blok
+  `Deployment Rules`.
 
-Sebelum itu: logo resmi terpasang di 3 titik, 27 gambar pindah ke aset lokal.
+Sebelum itu: lightbox + region filter + sticky filter bar, lalu push ke GitHub.
 
 ## CURRENTLY WORKING ON
 
@@ -180,7 +180,7 @@ beberapa node konseptual hanya muncul sebagai target edge, bukan sebagai node ut
 
 ## NEXT ACTION
 
-Tiga backport sudah selesai. Yang tersisa:
+Deploy sudah beres. Sisa pekerjaan:
 
 ```
 1. Hapus design_specification.md yang duplikat (SHA-256 identik)
@@ -188,10 +188,14 @@ Tiga backport sudah selesai. Yang tersisa:
 2. Kanal kontak email + TikTok - TERTAHAN.
    Data hanya ada di halaman draft dan tidak konsisten.
    Butuh konfirmasi client dulu.
+
+3. Opsional: buang 5 aset tak terpakai (~885 KB)
 ```
 
-Setelah itu: pasang logo + aset ke 6 halaman draft, putuskan badge item 9,
-addon susu, dan warna kuning.
+Kalau nanti menambah halaman produksi baru (mis. `menu.html`), taruh di root
+bersama `index.html` dan tambahkan ke navigasi. Jangan taruh di dalam
+`stitch_custom_design_implementation/` - folder itu sudah dikecualikan di
+`.vercelignore`.
 
 ## VERIFICATION
 

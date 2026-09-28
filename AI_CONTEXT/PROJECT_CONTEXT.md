@@ -117,11 +117,29 @@ Tidak ada API key, tidak ada token, tidak ada credential apa pun di project ini.
 
 ## Deployment
 
-**Belum ada konfigurasi deployment.** Tidak ada `netlify.toml`, `vercel.json`,
-`_headers`, `CNAME`, GitHub Actions, `Dockerfile`, atau `firebase.json`.
+**Sudah live di Vercel.** `index.html` di root repository adalah entry point, dan
+Vercel otomatis men-deploy setiap kali ada push ke branch `main`.
 
-Cara termudah saat ini: upload file `code.html` ke static host mana pun (Netlify Drop,
-GitHub Pages, shared hosting) — setiap halaman sudah self-contained.
+```
+https://web-ngobat.vercel.app/
+```
+
+Repo GitHub: `github.com/Tciptakarya/web_ngobat` (branch `main`).
+
+| Aspek | Nilai |
+|---|---|
+| Hosting | Vercel, static, tanpa build step |
+| Trigger | otomatis, setiap push ke `main` |
+| Build command | tidak ada. Nol `package.json`, nol framework |
+| Entry point | `index.html` (wajib ada di root, kalau tidak Vercel 404) |
+
+**`.vercelignore`** membatasi apa yang terkirim: hanya `index.html`, `assets/`, dan
+`README.md` (2,6 MB dari total repo 24,3 MB). Yang disembunyikan: 6 halaman draft,
+arsip ZIP, aset brand sumber, dan dokumentasi AI. Alasannya tertulis di dalam
+`.vercelignore` itu sendiri.
+
+Tidak ada `vercel.json`, `netlify.toml`, `_headers`, `CNAME`, GitHub Actions,
+maupun `Dockerfile`. Tidak perlu satu pun untuk static site tanpa build step.
 
 ## Development Environment
 

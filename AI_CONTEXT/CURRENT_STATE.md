@@ -26,6 +26,10 @@
 5. `data-desc` ditambahkan ke 6 kartu galeri; tile ke-6 di-retitle karena
    judul lamanya tidak cocok dengan gambarnya.
 6. **Di-push ke GitHub** `github.com/Tciptakarya/web_ngobat`, branch `main`.
+7. **Dideploy ke Vercel** `https://web-ngobat.vercel.app/`. Semula 404 karena
+   tidak ada `index.html` di root, lalu diperbaiki dengan memindahkan halaman
+   utama ke root. `.vercelignore` ditambahkan untuk memangkas payload 24,3 MB
+   menjadi 2,6 MB.
 
 Sebelum itu, di entri sebelumnya: logo resmi terpasang di 3 titik dan 27 gambar
 pindah dari hotlink ke aset lokal.

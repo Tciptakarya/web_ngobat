@@ -1,0 +1,52 @@
+# .vercelignore — apa yang TIDAK ikut ter-deploy ke Vercel
+#
+# Hasil: Vercel hanya menerima index.html + assets/ = 2,6 MB
+# (sebelumnya 24,3 MB). Tidak ada satu pun file di bawah yang dibutuhkan
+# oleh index.html — sudah diverifikasi: seluruh rujukan keluar dari
+# index.html hanya menunjuk ke assets/.
+#
+# File di repo tetap utuh. Yang disembunyikan hanya dari Vercel.
+# Kalau nanti perlu mempublikasikan salah satu file di bawah ini, hapus
+# barisnya dari daftar ini.
+
+# --- Arsitektur & handoff internal AI ---
+# Berisi daftar kontradiksi data, blocker, dan keputusan internal.
+# Tidak ada nilainya bagi pengunjung, dan tidak perlu terekspos.
+AGENTS.md
+AI_CONTEXT/
+
+# --- Arsip impor Stitch (10,1 MB) ---
+# Folder hasil ekstrasi ZIP. Isinya sudah ada di repo sebagai file biasa,
+# jadi file ZIP ini murni duplikat yang hanya berat.
+stitch_custom_design_implementation_and_PRD.zip
+
+# --- 6 halaman draft (10,4 MB) ---
+# PENTING: halaman-halaman ini memuat data yang SENGAJA tidak dipakai:
+#   - harga produk fiktif (Rp 22.000 / 28.000 / 30.000 / 32.000)
+#   - 4 produk yang tidak ada di katalog resmi
+#   - nomor WhatsApp placeholder 6281234567890
+#   - alamat dan jam buka yang berbeda dari data canonical
+# Kalau halaman ini bisa diakses publik, pengunjung bisa menemukan harga
+# yang salah dan nomor telepon yang tidak aktif. Jadi disembunyikan.
+#
+# Sudah tidak hotlink dan tidak punya aset, jadi tidak ada yang perlu
+# dipulihkan kalau nanti mau dipakai lagi.
+stitch_custom_design_implementation/
+
+# --- Aset brand sumber (1,0 MB) ---
+# Turunannya sudah ada di assets/brand/ (logo) dan assets/products/ (foto
+# produk). File aslinya hanya perlu untuk regenerate, bukan untuk serving.
+ngobat_logo.png
+menu-ngobat.jpeg
+
+# --- Spesifikasi desain (duplikat) ---
+# design_specification.md ada dua kali dengan isi identik (SHA-256 sama).
+# Yang di root disembunyikan supaya tidak muncul sebagai dokumen publik.
+# Yang di dalam stitch_custom_design_implementation/ sudah tertutup di atas.
+design_specification.md
+
+# --- Tooling lokal ---
+# graphify-out/ sudah di .gitignore karena tidak boleh masuk git sama sekali.
+# Didaftarkan lagi di sini sebagai pengaman, kalau suatu saat .gitignore
+# dilonggarkan.
+graphify-out/

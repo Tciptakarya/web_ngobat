@@ -48,8 +48,12 @@ Tidak ada. Task migrasi aset selesai dan terverifikasi di browser.
       Cold Drinks / Pastry) atau update `design_specification.md` supaya sesuai
       implementasi. Saat ini spec dan kode berbeda
 - [ ] **Tambah `favicon`** dari mark logo
-- [ ] **Siapkan konfigurasi deploy** (`netlify.toml` atau similar) saat proyek
-      siap tayang
+- [x] **Deploy ke Vercel** - `https://web-ngobat.vercel.app/`, auto-deploy dari
+      branch `main`, tanpa build step
+- [ ] **Pertimbangkan membuang 5 aset tak terpakai** (~885 KB): `logo-horizontal.png`,
+      `logo-wordmark.png`, `favicon-256.png`, `favicon-512.png`,
+      `hero/interior-wide.jpg`. Semuanya varian cadangan; `favicon-512.png`
+      praktis duplikat `logo-mark.png` di resolusi 256
 - [ ] **Pindahkan foto moodboard ke `assets/moodboard/`** supaya 5 folder dengan nama
       panjang itu tidak memicu kebingungan
 - [ ] **Update `design_specification.md`** agar mendokumentasikan keputusan yang
@@ -130,3 +134,8 @@ Yang tersisa:
 - [x] **Filter bar menu jadi sticky** di bawah header
 - [x] **Di-push ke GitHub** `github.com/Tciptakarya/web_ngobat` branch `main`
       (rebased di atas commit README awal repo, tidak menimpa apa pun)
+- [x] **Halaman utama dipindahkan ke root** (`index.html` + `assets/`) supaya
+      Vercel menyajikan situs di `/` - sebelumnya 404 karena tidak ada
+      `index.html` di root
+- [x] **`.vercelignore` dibuat**: payload deploy 24,3 MB -> 2,6 MB, sekaligus
+      menyembunyikan 6 halaman draft berdata salah dari akses publik
