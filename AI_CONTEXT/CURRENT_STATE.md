@@ -16,23 +16,21 @@
 
 ## Last Completed Work
 
-**Migrasi aset + logo ke halaman canonical (2026-09-28).**
+**Backport 3 fitur + publish ke GitHub (2026-09-28).**
 
-Selesai:
-1. Logo diproses dari `ngobat_logo.png`: background putih dihapus (alpha), crop tight,
-   dipecah jadi mark / wordmark / lockup / horizontal, plus favicon 64/128/256.
-2. 11 foto produk di-crop dari `menu-ngobat.jpeg` (deteksi bounding box otomatis),
-   di-feather, dikomposit ke kartu krem `#FFFDF5` 600x600, disimpan JPEG.
-3. 6 tile galeri + 1 hero + 1 OG image dibuat dari 5 foto moodboard resolusi tinggi.
-4. Halaman canonical di-update: 3 emoji `☕` diganti logo asli, 27 `<img>` diganti
-   aset lokal, favicon ditambahkan, 2 `alt` yang tidak cocok diperbaiki.
-5. Aset dipindahkan ke `stitch_custom_design_implementation/<page>/assets/` supaya path
-   relatif resolve dan folder halaman bisa di-deploy mandiri.
-6. Diverifikasi di browser: filter 3/8/11, filter galeri 2/6, modal produk, lightbox,
-   mobile drawer, scroll lock, 0 request gagal.
-7. Dokumentasi diperbarui.
+1. **Lightbox di-upgrade**: prev/next, counter `n / total`, badge kategori,
+   deskripsi, keyboard ArrowLeft/ArrowRight. Counter mengikuti filter aktif.
+2. **Filter region outlet**: 4 pill + `data-region` pada 3 kartu.
+3. **Kanal kontak ketiga** (Kunjungi Langsung) dari data outlet terverifikasi.
+4. **Filter bar menu jadi sticky** di bawah header.
+5. `data-desc` ditambahkan ke 6 kartu galeri; tile ke-6 di-retitle karena
+   judul lamanya tidak cocok dengan gambarnya.
+6. **Di-push ke GitHub** `github.com/Tciptakarya/web_ngobat`, branch `main`.
 
-Belum: backport fitur, hapus duplikat, pasang logo di 6 halaman draft.
+Sebelum itu, di entri sebelumnya: logo resmi terpasang di 3 titik dan 27 gambar
+pindah dari hotlink ke aset lokal.
+
+## Currently In Progress
 
 ## Currently In Progress
 
@@ -398,20 +396,21 @@ Yang tersisa bersifat substantif, bukan crash:
 
 ## Current Blockers
 
-**Empat pertanyaan yang masih menunggu client:**
+**Dua pertanyaan yang masih menunggu client:**
 
-1. **Item Hot Kopi Saring Lawas** — badge-nya "New" (mengikuti warna hitam di papan),
-   "Signature" (mengikuti implementasi sekarang), atau "Best Seller"?
-2. **Susu alternatif Oat +Rp5.000 / Soy +Rp4.000** — benar-benar ada di outlet, atau
-   konten generik yang harus dibuang?
-3. **Warna kuning** — token sistem `#FFE600`, logo `#FEE820`, tag papan `#FCDC17`.
-   Currently yang dipakai adalah `#FFE600`. Perlu konfirmasi apakah itu benar.
-4. **Enam halaman draft** — akan dipublish (perlu backport drawer + perbaiki data),
-   atau dibuang (hanya canonical yang dilanjutkan)?
+1. **Item Hot Kopi Saring Lawas** - badge-nya "New" (mengikuti warna hitam di
+   papan), "Signature" (status quo), atau "Best Seller"?
+2. **Susu alternatif Oat +Rp5.000 / Soy +Rp4.000** - benar-benar ada di outlet,
+   atau konten generik yang harus dibuang?
 
-Nomor 3 tidak lagi memblokir pekerjaan teknis — sudah diputuskan sementara untuk
-mempertahankan `#FFE600`. Tapi tetap perlu dikonfirmasi agar dokumentasi tidak
-menyimpan asumsi.
+**Blocker baru: alamat email dan handle TikTok.** Keduanya hanya ada di halaman
+draft, dan file draft itu sendiri tidak konsisten soal handle Instagram. Jadi tidak
+dipasang di halaman canonical. Butuh data resmi dari client.
+
+Dua pertanyaan lama (warna kuning, fate 6 halaman draft) tidak lagi memblokir
+pekerjaan teknis, tapi tetap perlu konfirmasi.
+
+## Exact Next Step
 
 ## Exact Next Step
 

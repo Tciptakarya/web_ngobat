@@ -308,7 +308,7 @@
           </p>
 </div>
 <!-- Filter Buttons -->
-<div aria-label="Kategori Menu Kopi" class="flex flex-wrap items-center justify-center gap-2 mb-10" role="tablist">
+<div aria-label="Kategori Menu Kopi" class="sticky top-20 z-30 -mx-4 md:-mx-8 px-4 md:px-8 py-3 mb-8 bg-surface-container-lowest/95 backdrop-blur-md border-b border-surface-container" role="tablist">
 <button aria-pressed="true" aria-selected="true" class="menu-filter-btn px-5 py-2.5 rounded-full text-xs font-bold bg-[#FFE600] text-[#111111] shadow-sm transition-all focus-ring" data-category="all" id="filter-all" role="tab">
             Semua (11)
           </button>
@@ -694,7 +694,7 @@
 </div>
 <!-- Photography Items Grid -->
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
-<div aria-label="Lihat foto Eksterior &amp; Suasana Hangat Kedai" class="gallery-card group relative h-64 sm:h-72 rounded-2xl overflow-hidden cursor-pointer shadow-sm" data-category="space" data-src="assets/gallery/exterior.jpg" data-title="Eksterior &amp; Suasana Hangat Kedai" role="button" tabindex="0">
+<div aria-label="Lihat foto Eksterior &amp; Suasana Hangat Kedai" class="gallery-card group relative h-64 sm:h-72 rounded-2xl overflow-hidden cursor-pointer shadow-sm" data-category="space" data-src="assets/gallery/exterior.jpg" data-title="Eksterior &amp; Suasana Hangat Kedai" data-desc="Tampak depan kedai dengan papan nama brand, tanaman menghias teras, dan meja kayu di ruang luar." role="button" tabindex="0">
 <img alt="Eksterior &amp; Suasana Hangat Kedai Ngopi Bareng Teman" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" src="assets/gallery/exterior.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-[#111111]/80 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity flex items-end p-5">
 <div>
@@ -703,7 +703,7 @@
 </div>
 </div>
 </div>
-<div aria-label="Lihat foto Barista Menyapa" class="gallery-card group relative h-64 sm:h-72 rounded-2xl overflow-hidden cursor-pointer shadow-sm" data-category="barista" data-src="assets/gallery/barista.jpg" data-title="Barista Kami yang Selalu Ramah Menyapa" role="button" tabindex="0">
+<div aria-label="Lihat foto Barista Menyapa" class="gallery-card group relative h-64 sm:h-72 rounded-2xl overflow-hidden cursor-pointer shadow-sm" data-category="barista" data-src="assets/gallery/barista.jpg" data-title="Barista Kami yang Selalu Ramah Menyapa" data-desc="Barista menuang susu ke cangkir keramik sambil membentuk latte art, di depan meja bar kayu." role="button" tabindex="0">
 <img alt="Barista Ngopi Bareng Teman menuang latte art ramah di meja bar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" src="assets/gallery/barista.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-[#111111]/80 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity flex items-end p-5">
 <div>
@@ -712,7 +712,7 @@
 </div>
 </div>
 </div>
-<div aria-label="Lihat foto Manual Brew V60" class="gallery-card group relative h-64 sm:h-72 rounded-2xl overflow-hidden cursor-pointer shadow-sm" data-category="barista" data-src="assets/gallery/manual-brew-v60.jpg" data-title="Manual Brew V60 pour over hangat" role="button" tabindex="0">
+<div aria-label="Lihat foto Manual Brew V60" class="gallery-card group relative h-64 sm:h-72 rounded-2xl overflow-hidden cursor-pointer shadow-sm" data-category="barista" data-src="assets/gallery/manual-brew-v60.jpg" data-title="Manual Brew V60 pour over hangat" data-desc="Manual brew V60 dengan ceret kuningan dan filter keramik,bean bijinya berserbuk di atas meja kayu." role="button" tabindex="0">
 <img alt="Proses seduh manual brew V60 dengan ceret tembaga di bar kayu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" src="assets/gallery/manual-brew-v60.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-[#111111]/80 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity flex items-end p-5">
 <div>
@@ -721,7 +721,7 @@
 </div>
 </div>
 </div>
-<div aria-label="Lihat foto Es Kopi Susu" class="gallery-card group relative h-64 sm:h-72 rounded-2xl overflow-hidden cursor-pointer shadow-sm" data-category="coffee" data-src="assets/gallery/es-kopi-susu.jpg" data-title="Es Kopi Susu Gula Aren khas kedai" role="button" tabindex="0">
+<div aria-label="Lihat foto Es Kopi Susu" class="gallery-card group relative h-64 sm:h-72 rounded-2xl overflow-hidden cursor-pointer shadow-sm" data-category="coffee" data-src="assets/gallery/es-kopi-susu.jpg" data-title="Es Kopi Susu Gula Aren khas kedai" data-desc="Es kopi susu dengan lapisan susu yang lembut, disajikan di atas coaster kayu di kedai." role="button" tabindex="0">
 <img alt="Gelas dingin Es Kopi Susu di meja kayu kedai" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" src="assets/gallery/es-kopi-susu.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-[#111111]/80 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity flex items-end p-5">
 <div>
@@ -730,7 +730,7 @@
 </div>
 </div>
 </div>
-<div aria-label="Lihat foto Sudut Nyaman Kedai" class="gallery-card group relative h-64 sm:h-72 rounded-2xl overflow-hidden cursor-pointer shadow-sm" data-category="space" data-src="assets/gallery/interior.jpg" data-title="Sudut Nyaman Berbagi Cerita" role="button" tabindex="0">
+<div aria-label="Lihat foto Sudut Nyaman Kedai" class="gallery-card group relative h-64 sm:h-72 rounded-2xl overflow-hidden cursor-pointer shadow-sm" data-category="space" data-src="assets/gallery/interior.jpg" data-title="Sudut Nyaman Berbagi Cerita" data-desc="Ruang dalam kedai yang hangat dan ramai: meja kayu, tanaman hijau, dan cahaya alami." role="button" tabindex="0">
 <img alt="Pelanggan berbincang hangat di sudut luar kedai kopi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" src="assets/gallery/interior.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-[#111111]/80 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity flex items-end p-5">
 <div>
@@ -739,12 +739,12 @@
 </div>
 </div>
 </div>
-<div aria-label="Lihat foto Cangkir Kopi Hangat" class="gallery-card group relative h-64 sm:h-72 rounded-2xl overflow-hidden cursor-pointer shadow-sm" data-category="coffee" data-src="assets/gallery/flavour-range.jpg" data-title="Artisan Cangkir Kopi Hangat" role="button" tabindex="0">
+<div aria-label="Lihat foto Empat Varian Es Kopi Susu" class="gallery-card group relative h-64 sm:h-72 rounded-2xl overflow-hidden cursor-pointer shadow-sm" data-category="coffee" data-src="assets/gallery/flavour-range.jpg" data-title="Empat Varian dalam Satu Kedai" data-desc="Deretan varian Es Kopi Susu: gula aren, hazelnut, caramel, dan butter scotch, semuanya diharga sama." role="button" tabindex="0">
 <img alt="Deretan varian Es Kopi Susu: gula aren, hazelnut, caramel, dan butter scotch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" src="assets/gallery/flavour-range.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-[#111111]/80 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity flex items-end p-5">
 <div>
 <span class="text-[10px] font-bold text-[#FFE600] uppercase tracking-wider">Kopi &amp; Minuman</span>
-<p class="font-headline font-bold text-sm text-white">Kehangatan di Setiap Cangkir</p>
+<p class="font-headline font-bold text-sm text-white">Empat Varian dalam Satu Kedai</p>
 </div>
 </div>
 </div>
@@ -752,13 +752,33 @@
 </div>
 </section>
 <!-- LIGHTBOX MODAL -->
-<div aria-label="Tampilan Penuh Foto" aria-modal="true" class="hidden fixed inset-0 z-50 bg-[#111111]/90 backdrop-blur-md flex items-center justify-center p-4" id="lightbox-modal" role="dialog">
-<button aria-label="Tutup foto" class="absolute top-6 right-6 z-10 w-10 h-10 rounded-full bg-white/20 text-white flex items-center justify-center hover:bg-white/30 focus-ring" id="lightbox-close">
+<div aria-label="Tampilan Penuh Foto" aria-modal="true" class="hidden fixed inset-0 z-50 bg-[#111111]/92 backdrop-blur-md flex items-center justify-center p-4" id="lightbox-modal" role="dialog">
+<div class="relative w-full max-w-4xl flex flex-col items-center">
+<!-- badge + counter + close -->
+<div class="w-full flex items-center justify-between mb-3 px-1 gap-3">
+<div class="flex items-center gap-2 min-w-0">
+<span class="px-3 py-1 rounded-full bg-[#FFE600] text-[#111111] text-[10px] font-bold uppercase tracking-wider shrink-0" id="lightbox-badge">Galeri</span>
+<span class="text-xs font-semibold text-white/70 tabular-nums" id="lightbox-counter">1 / 6</span>
+</div>
+<button aria-label="Tutup foto" class="w-10 h-10 shrink-0 rounded-full bg-white/20 text-white flex items-center justify-center hover:bg-white/30 focus-ring" id="lightbox-close">
 <span class="material-symbols-outlined text-[24px]">close</span>
 </button>
-<div class="relative max-w-4xl w-full flex flex-col items-center">
-<img alt="" class="max-h-[75vh] w-auto rounded-2xl shadow-2xl object-contain" id="lightbox-img" src=""/>
-<p class="font-headline font-bold text-base text-white mt-4 text-center" id="lightbox-title"></p>
+</div>
+<!-- image frame with prev / next -->
+<div class="relative w-full flex items-center justify-center">
+<img alt="" class="max-h-[66vh] w-auto max-w-full rounded-2xl shadow-2xl object-contain" id="lightbox-img" src=""/>
+<button aria-label="Foto sebelumnya" class="absolute left-1 sm:-left-6 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 text-[#111111] shadow-lg flex items-center justify-center hover:bg-[#FFE600] transition-colors focus-ring" id="lightbox-prev">
+<span class="material-symbols-outlined text-[24px]">chevron_left</span>
+</button>
+<button aria-label="Foto selanjutnya" class="absolute right-1 sm:-right-6 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 text-[#111111] shadow-lg flex items-center justify-center hover:bg-[#FFE600] transition-colors focus-ring" id="lightbox-next">
+<span class="material-symbols-outlined text-[24px]">chevron_right</span>
+</button>
+</div>
+<!-- caption -->
+<div class="w-full mt-4 text-center px-2">
+<p class="font-headline font-bold text-base text-white" id="lightbox-title"></p>
+<p class="text-xs text-white/60 mt-1.5 max-w-2xl mx-auto leading-relaxed" id="lightbox-desc"></p>
+</div>
 </div>
 </div>
 <!-- 6. INSTAGRAM SECTION -->
@@ -818,10 +838,25 @@
 <h2 class="font-headline font-bold text-3xl sm:text-4xl text-[#111111] tracking-tight">Find Us</h2>
 <p class="text-sm sm:text-base text-text-secondary mt-2">Temukan kedai terdekat dan nikmati secangkir kehangatan bersama kami.</p>
 </div>
+<!-- Region filter -->
+<div aria-label="Filter Outlet per Kota" class="flex flex-wrap items-center gap-2 mb-8" role="group">
+<button aria-pressed="true" class="outlet-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-[#FFE600] text-[#111111] shadow-sm transition-all focus-ring" data-region="all" type="button">
+            Semua Outlet (3)
+          </button>
+<button aria-pressed="false" class="outlet-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-surface-card text-text-secondary border border-surface-container hover:bg-surface-container-low transition-all focus-ring" data-region="jakarta" type="button">
+            Jakarta
+          </button>
+<button aria-pressed="false" class="outlet-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-surface-card text-text-secondary border border-surface-container hover:bg-surface-container-low transition-all focus-ring" data-region="bandung" type="button">
+            Bandung
+          </button>
+<button aria-pressed="false" class="outlet-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-surface-card text-text-secondary border border-surface-container hover:bg-surface-container-low transition-all focus-ring" data-region="bali" type="button">
+            Bali
+          </button>
+</div>
 <!-- 3 Verified Outlets -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
 <!-- Outlet 1: Jakarta -->
-<div class="bg-surface-card p-6 rounded-2xl border border-surface-container flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div class="outlet-card" data-region="jakarta" class="bg-surface-card p-6 rounded-2xl border border-surface-container flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
 <div>
 <div class="flex items-center justify-between mb-3">
 <span class="text-[11px] font-bold text-[#111111] bg-[#FFE600] px-2.5 py-0.5 rounded-full">Outlet Utama</span>
@@ -844,7 +879,7 @@
 </a>
 </div>
 <!-- Outlet 2: Bandung -->
-<div class="bg-surface-card p-6 rounded-2xl border border-surface-container flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div class="outlet-card" data-region="bandung" class="bg-surface-card p-6 rounded-2xl border border-surface-container flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
 <div>
 <div class="flex items-center justify-between mb-3">
 <span class="text-[11px] font-bold text-[#111111] bg-surface-container px-2.5 py-0.5 rounded-full">Bandung Hub</span>
@@ -867,7 +902,7 @@
 </a>
 </div>
 <!-- Outlet 3: Bali -->
-<div class="bg-surface-card p-6 rounded-2xl border border-surface-container flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div class="outlet-card" data-region="bali" class="bg-surface-card p-6 rounded-2xl border border-surface-container flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
 <div>
 <div class="flex items-center justify-between mb-3">
 <span class="text-[11px] font-bold text-[#111111] bg-surface-container px-2.5 py-0.5 rounded-full">Bali Hub</span>
@@ -917,6 +952,15 @@
 <div>
 <p class="text-[11px] font-bold text-text-secondary uppercase">Instagram Resmi</p>
 <p class="font-headline font-bold text-sm text-[#111111]">@ngopibarengteman.official</p>
+</div>
+</a>
+<a class="flex items-center gap-3 p-3.5 rounded-2xl bg-surface-container-low hover:bg-[#FFE600]/30 transition-colors" href="#lokasi">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-[#111111]">
+<span class="material-symbols-outlined text-[20px]">pin_drop</span>
+</div>
+<div>
+<p class="text-[11px] font-bold text-text-secondary uppercase">Kunjungi Langsung</p>
+<p class="font-headline font-bold text-sm text-[#111111]">Jakarta &middot; Bandung &middot; Bali</p>
 </div>
 </a>
 </div>
@@ -1071,12 +1115,15 @@
       link.addEventListener('click', () => toggleMobileMenu(false));
     });
 
-    // ESC key closes drawers and modals
+    // ESC closes drawers and modals; arrow keys page the lightbox while it is open
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         toggleMobileMenu(false);
         closeProductModal();
         closeLightbox();
+      } else if (!lightboxModal.classList.contains('hidden')) {
+        if (e.key === 'ArrowLeft') stepLightbox(-1);
+        if (e.key === 'ArrowRight') stepLightbox(1);
       }
     });
 
@@ -1221,15 +1268,53 @@
     // Lightbox Modal Logic
     const lightboxModal = document.getElementById('lightbox-modal');
     const lightboxClose = document.getElementById('lightbox-close');
+    const lightboxPrev = document.getElementById('lightbox-prev');
+    const lightboxNext = document.getElementById('lightbox-next');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxDesc = document.getElementById('lightbox-desc');
+    const lightboxBadge = document.getElementById('lightbox-badge');
+    const lightboxCounter = document.getElementById('lightbox-counter');
 
-    function openLightbox(src, title) {
+    // The lightbox walks only the tiles that survive the active category filter,
+    // so the counter always matches what the visitor can actually see.
+    let lightboxItems = [];
+    let lightboxIndex = 0;
+
+    function collectVisibleGallery() {
+      lightboxItems = Array.from(galleryCards).filter(
+        (card) => !card.classList.contains('hidden')
+      );
+    }
+
+    function renderLightbox(index) {
+      if (!lightboxItems.length) return;
+      // wrap around at both ends
+      if (index < 0) index = lightboxItems.length - 1;
+      if (index >= lightboxItems.length) index = 0;
+      lightboxIndex = index;
+
+      const card = lightboxItems[lightboxIndex];
+      const src = card.getAttribute('data-src');
+      const title = card.getAttribute('data-title');
+      const desc = card.getAttribute('data-desc') || '';
+      const category = (card.getAttribute('data-category') || 'galeri').split(' ')[0];
+
       lightboxImg.src = src;
       lightboxImg.alt = title;
       lightboxTitle.textContent = title;
+      lightboxDesc.textContent = desc;
+      lightboxBadge.textContent = category;
+      lightboxCounter.textContent = `${lightboxIndex + 1} / ${lightboxItems.length}`;
+    }
+
+    function openLightbox(card) {
+      collectVisibleGallery();
+      const target = lightboxItems.indexOf(card);
+      renderLightbox(target === -1 ? 0 : target);
       lightboxModal.classList.remove('hidden');
       document.body.classList.add('overflow-hidden');
+      lightboxClose.focus();
     }
 
     function closeLightbox() {
@@ -1237,19 +1322,58 @@
       document.body.classList.remove('overflow-hidden');
     }
 
+    function stepLightbox(delta) {
+      renderLightbox(lightboxIndex + delta);
+    }
+
     galleryCards.forEach(card => {
       card.addEventListener('click', () => {
-        openLightbox(card.getAttribute('data-src'), card.getAttribute('data-title'));
+        openLightbox(card);
       });
       card.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          openLightbox(card.getAttribute('data-src'), card.getAttribute('data-title'));
+          openLightbox(card);
         }
       });
     });
 
+    // Outlet region filter
+    const outletFilterBtns = document.querySelectorAll('.outlet-filter-btn');
+    const outletCards = document.querySelectorAll('.outlet-card');
+
+    outletFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const region = btn.getAttribute('data-region');
+
+        outletFilterBtns.forEach(b => {
+          b.setAttribute('aria-pressed', 'false');
+          b.classList.remove('bg-[#FFE600]', 'text-[#111111]', 'shadow-sm');
+          b.classList.add('bg-surface-card', 'text-text-secondary', 'border', 'border-surface-container');
+        });
+        btn.setAttribute('aria-pressed', 'true');
+        btn.classList.add('bg-[#FFE600]', 'text-[#111111]', 'shadow-sm');
+        btn.classList.remove('bg-surface-card', 'text-text-secondary', 'border', 'border-surface-container');
+
+        outletCards.forEach(card => {
+          if (region === 'all' || card.getAttribute('data-region') === region) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
     lightboxClose.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', (e) => {
+      e.stopPropagation();
+      stepLightbox(-1);
+    });
+    lightboxNext.addEventListener('click', (e) => {
+      e.stopPropagation();
+      stepLightbox(1);
+    });
     lightboxModal.addEventListener('click', (e) => {
       if (e.target === lightboxModal) closeLightbox();
     });

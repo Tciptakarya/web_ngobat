@@ -218,7 +218,7 @@ keputusan untuk **tidak** mengubahnya dalam handoff ini.
 
 Alasan yang relevan: saat ini nol `package.json`, nol bundler, nol test runner. Semua 7
 halaman sudah self-contained dan bisa langsung dipublish ke static host apa pun.
-Menambahkan build step berarti-you harus mengonversi 7 file sekaligus, yang
+Menambahkan build step berarti kamu harus mengonversi 7 file sekaligus, yang
 justru menambah risiko pada handoff.
 
 ### Alternatives Considered

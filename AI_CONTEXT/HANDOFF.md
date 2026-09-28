@@ -38,22 +38,17 @@ sudah diverifikasi render di browser.
 
 ## LAST COMPLETED
 
-**Migrasi aset + logo ke halaman canonical (2026-09-28):**
+**Backport 3 fitur + push ke GitHub (2026-09-28).**
 
-1. Logo diproses dari `ngobat_logo.png`: alpha, crop tight, mark / wordmark /
-   lockup / horizontal, favicon 64/128/256 (8 file, 902 KB).
-2. 11 foto produk di-crop dari `menu-ngobat.jpeg` ke `assets/products/`
-   (600x600 JPEG di kartu krem `#FFFDF5`, 267 KB).
-3. 6 tile galeri + hero + OG image dari 5 foto moodboard (1.583 MB).
-4. Halaman canonical: 3 emoji `☕` diganti logo, 27 `<img>` diganti aset lokal,
-   11 `data-image` + 6 `data-src` + 3 OG URL diganti, favicon ditambahkan,
-   2 `alt` salah diperbaiki. 89.226 -> 78.451 byte.
-5. Aset dipindah ke dalam folder halaman supaya path relatif resolve dan folder
-   bisa di-deploy mandiri.
-6. Verifikasi browser: filter 3/8/11, galeri 2/6, modal, lightbox, drawer,
-   scroll lock, 0 error.
+- Lightbox: prev/next, counter `n / total`, badge, deskripsi, keyboard arrows.
+  Counter mengikuti filter galeri yang aktif.
+- Filter region outlet: 4 pill, `data-region` pada 3 kartu.
+- Kanal kontak ketiga (Kunjungi Langsung) dari data outlet terverifikasi.
+- Filter bar menu jadi `sticky top-20`.
+- `data-desc` di 6 kartu galeri; tile ke-6 di-retitle.
+- Push ke `github.com/Tciptakarya/web_ngobat` branch `main`.
 
-Total `assets/`: 28 file, 2.751 MB.
+Sebelum itu: logo resmi terpasang di 3 titik, 27 gambar pindah ke aset lokal.
 
 ## CURRENTLY WORKING ON
 
@@ -185,21 +180,18 @@ beberapa node konseptual hanya muncul sebagai target edge, bukan sebagai node ut
 
 ## NEXT ACTION
 
-Aset dan logo selesai. Berikutnya backport fitur.
+Tiga backport sudah selesai. Yang tersisa:
 
 ```
 1. Hapus design_specification.md yang duplikat (SHA-256 identik)
 
-2. Backport 3 fitur ke halaman canonical:
-   - Lightbox prev/next + counter + keyboard  (dari galeri_instagram)
-   - Filter region + 4 kanal kontak          (dari lokasi_kontak)
-   - Sticky filter bar                        (dari menu_harga)
+2. Kanal kontak email + TikTok - TERTAHAN.
+   Data hanya ada di halaman draft dan tidak konsisten.
+   Butuh konfirmasi client dulu.
 ```
 
-Detail ada di `TODO.md` bagian `Next`.
-
-Setelah itu, tunggu jawaban 4 blocker untuk pasang logo + aset ke 6 halaman
-draft dan menyelesaikan keputusan badge / kuning / addon susu.
+Setelah itu: pasang logo + aset ke 6 halaman draft, putuskan badge item 9,
+addon susu, dan warna kuning.
 
 ## VERIFICATION
 

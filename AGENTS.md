@@ -125,8 +125,14 @@ kebenaran untuk katalog.
 ### Aset brand
 
 - `ngobat_logo.png` adalah logo resmi. Jangan ganti dengan placeholder.
-- Kalau perlu membuat aset turunan (mis. varian horizontal), tetap harus berasal dari
-  file ini, bukan digambar ulang.
+- Turunannya sudah ada di `assets/brand/`: `logo-mark.png` (header, 40px),
+  `logo-lockup.png` (footer), plus `logo-wordmark.png`, `logo-horizontal.png`, dan
+  favicon 64/128/256. Kalau butuh varian baru, turunkan dari `ngobat_logo.png`,
+  jangan gambar ulang.
+- `assets/` ada **di dalam folder halaman**, bukan di root project. Path-nya relatif
+  (`assets/...`). Kalau folder itu dipindah keluar, semua gambar rusak.
+- Warna token tetap `#FFE600` meski logo punya `#FEE820` — sudah diputuskan
+  sementara. Jangan diubah tanpa konfirmasi client. Lihat `DECISIONS.md`.
 
 ---
 
@@ -267,11 +273,12 @@ Temuan yang akan membuat agent berikutnya salah kalau tidak tahu:
    harus find-replace — atau lebih baik, refactor ke token dulu.
 4. **`::-webkit-scrollbar { display: none }`** ada di halaman canonical. Render akan
    terlihat "menghilang" kalau CSS gagal load.
-5. **Logo sekarang masih emoji `☕`** di 3 tempat. Itu placeholder, bukan keputusan
-   desain.
-6. **Semua gambar masih hotlink** ke `lh3.googleusercontent.com`. Dan halaman
-   canonical hanya punya **4 gambar unik untuk 42 referensi** — 11 kartu produk
-   sebenarnya cuma memakai 2 foto. Jangan tambah hotlink baru sebelum aset lokal siap.
+5. **Logo resmi sudah terpasang** di 3 titik (header, mobile drawer, footer) memakai
+   `assets/brand/`. Jangan kembalikan ke placeholder emoji. Varian yang belum dipakai:
+   `logo-horizontal.png`, `logo-wordmark.png`, `favicon-256.png`
+6. **Gambar sudah lokal, tidak ada hotlink lagi di halaman canonical.** 27 `<img>`
+   semuanya menunjuk ke folder `assets/` di dalam folder halaman. Enam halaman draft
+   masih hotlink — jangan tirukan pola itu ke halaman canonical.
 7. **2 `screen.png` adalah stub 28 byte.** Bukan gambar valid. Jangan buka atau
    analisis sebagai gambar.
 8. **Header/footer ada di 7 file secara terpisah.** Edit navigasi berarti edit semua.

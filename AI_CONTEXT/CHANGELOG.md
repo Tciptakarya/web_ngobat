@@ -5,6 +5,73 @@ Format: `## [Tanggal]` → `Added` / `Changed` / `Fixed` / `Removed` / `Technica
 
 ---
 
+## 2026-09-28 (3) — Backport 3 fitur + publish ke GitHub
+
+### Added
+
+- **Lightbox di-upgrade** di halaman canonical. Sebelumnya hanya tombol close.
+  Sekarang punya: tombol sebelumnya / selanjutnya, counter `n / total`, badge
+  kategori, deskripsi foto, dan navigasi keyboard panah kiri / kanan.
+- **`data-desc` pada 6 kartu galeri** plus `data-desc`/perbaikan `data-title`/
+  `aria-label`/caption pada tile komposit varian, karena judul lamanya
+  ("Artisan Cangkir Kopi Hangat") tidak cocok dengan gambarnya.
+- **Filter region outlet**: 4 pill (Semua Outlet 3 / Jakarta / Bandung / Bali)
+  di atas grid outlet, plus `data-region` pada 3 kartu.
+- **Kanal kontak ketiga "Kunjungi Langsung"** (Jakarta - Bandung - Bali),
+  dibangun dari data outlet yang sudah terverifikasi.
+- **`<link rel="icon">`** sudah ada (dari entri sebelumnya).
+
+### Changed
+
+- **Filter bar menu jadi sticky.** Semula ikut ter-scroll; sekarang `sticky top-20`
+  dengan `backdrop-blur` dan border bawah, menempel di bawah header yang juga sticky.
+  Alasannya: grid menu 11 kartu terlalu tinggi sehingga filter jadi tak terjangkau.
+- Counter lightbox sekarang **mengikuti filter kategori yang aktif**. Kalau filter
+  `barista` aktif, counter menunjukkan `1 / 2`, bukan `1 / 6`.
+
+### Fixed
+
+- Judul dan caption tile galeri ke-6 tidak lagi Infant dengan gambarnya.
+- `alt` kosong pada `lightbox-img` kini selalu terisi karena `renderLightbox()`
+  mengisinya dari `data-title` setiap kali berganti foto.
+
+### Technical Notes
+
+**Kenapa kanal email dan TikTok tidak ditambahkan.** `lokasi_kontak/code.html`
+memiliki `hello@ngopibarengteman.com` dan `@ngopibarengteman.official` (TikTok),
+dan file itu juga mencantumkan Instagram sebagai `@ngopibarengteman` (tanpa
+`.official`) — tidak konsisten dengan halaman canonical. Karena `AGENTS.md`
+melarang mengarang data kontak yang belum ada sumbernya, kedua kanal itu
+dibiarkan dan ditandai sebagai TODO yang menunggu konfirmasi client. Kanal ketiga
+yang ditambahkan memakai data outlet yang sudah terverifikasi di halaman ini.
+
+**Deteksi kartu outlet.** Ada 7 elemen dengan class kartu yang identik di file ini
+(3 kartu outlet + 4 kartu di section Cerita Kami). Penandaan `outlet-card` dilakukan
+dengan mencari posisi relatif terhadap URL Google Maps masing-masing outlet, bukan
+dengan mencocokkan class.
+
+**Verifikasi browser** (Chrome, server lokal):
+
+| Uji | Hasil |
+|---|---|
+| Filter region | 3 kartu, region jakarta/bandung/bali, filter ke 1 kota, kembali ke 3 |
+| Filter menu sticky | `sticky` + `top-20` terpasang |
+| Lightbox | buka di index kartu yang diklik, prev/next, wrap-around dua arah |
+| Lightbox + filter | counter `1 / 2` saat filter barista aktif |
+| Keyboard | ArrowRight/ArrowLeft navigasi, Escape menutup + unlock scroll |
+| Kanal kontak | 3 (dari sebelumnya 2) |
+| Regresi | filter menu 8/11, modal harga Rp18.000, 0 error JS, 0 request gagal |
+
+**Tidak teruji:** screenshot visual lightbox dan region filter. Browser tool
+menolak `screenshot` dengan pesan "needs a visible tab" karena window desktop
+tidak sedang aktif. Verifikasi di atasseluruhnya lewat DOM/API, bukan pixel.
+
+### Removed
+
+Tidak ada.
+
+---
+
 ## 2026-09-28 (2) — Logo resmi + 11 foto produk + galeri
 
 Halaman canonical di-upgrade dari aset placeholder ke aset brand asli. **Ini commit

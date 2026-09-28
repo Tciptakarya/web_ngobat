@@ -24,14 +24,13 @@ Tidak ada. Task migrasi aset selesai dan terverifikasi di browser.
 
 - [ ] **Hapus `design_specification.md` yang duplikat.** File di root dan di
       `stitch_custom_design_implementation/` identik (SHA-256 sama). Sisakan satu
-- [ ] **Backport lightbox prev/next + counter + navigasi keyboard** dari
-      `galeri_instagram/code.html` ke `#lightbox-modal` di halaman canonical.
-      Versi canonical sekarang hanya punya tombol close
-- [ ] **Backport filter region + 4 kanal kontak** dari `lokasi_kontak/code.html`.
-      Tambah section `#kontak` terpisah (sekarang `#kontak` cuma div di dalam
-      `#lokasi`) dengan WhatsApp, Instagram, email, TikTok
-- [ ] **Backport sticky filter bar** dari `menu_harga/code.html` ke `#menu`.
-      Sekarang filter ikut ter-scroll; di sana `position: sticky` di `top-20`
+- [x] **Lightbox prev/next + counter + navigasi keyboard** ter-backport dan
+      terverifikasi. Counter mengikuti filter galeri yang aktif
+- [x] **Filter region (Semua/Jakarta/Bandung/Bali)** ter-backport dan terverifikasi
+- [x] **Sticky filter bar menu** ter-backport dan terverifikasi
+- [ ] **Tambah kanal kontak email + TikTok** - DITUNDA. Alamat email dan handle
+      TikTok hanya ada di halaman draft dan belum terverifikasi, jadi tidak
+      ditambahkan. Butuh konfirmasi client dulu
 - [ ] **Backport bento "Seduh Sesuai Selera Kamu"** dari `menu_harga/code.html`
       — **hanya bagian level gula dan asal biji, JANGAN bagian harga susu alternatif**
       (belum diverifikasi ke client)
@@ -125,3 +124,9 @@ Yang tersisa:
 - [x] **Verifikasi browser**: filter 3/8/11, filter galeri 2/6, modal produk,
       lightbox, mobile drawer, scroll lock, 0 console error, 27 gambar / 0 hotlink /
       0 tanpa alt
+- [x] **Lightbox di-upgrade**: prev/next, counter `n / total`, badge kategori,
+      deskripsi, keyboard ArrowLeft/ArrowRight, counter mengikuti filter aktif
+- [x] **Filter region outlet** + 1 kanal kontak baru (Kunjungi Langsung)
+- [x] **Filter bar menu jadi sticky** di bawah header
+- [x] **Di-push ke GitHub** `github.com/Tciptakarya/web_ngobat` branch `main`
+      (rebased di atas commit README awal repo, tidak menimpa apa pun)
